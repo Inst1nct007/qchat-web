@@ -261,4 +261,46 @@ footer {
   .buttons { flex-direction: column; }
   .btn { width: 100%; justify-content: center; }
   .hero::before { background-size: 40px 40px; }
+  
+  /* Hide custom cursor on mobile */
+  .cursor-dot, .cursor-outline {
+    display: none;
+  }
+}
+
+/* Custom Cursor */
+body {
+  cursor: none; /* Hide default cursor */
+}
+
+a, button, .btn, .feature-card {
+  cursor: none; /* Ensure pointer doesn't show on interactive elements */
+}
+
+.cursor-dot {
+  width: 5px;
+  height: 5px;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 9999;
+  pointer-events: none;
+  box-shadow: 0 0 10px white;
+}
+
+.cursor-outline {
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 9998;
+  pointer-events: none;
+  transition: transform 0.2s, background 0.2s, border-color 0.2s;
 }
