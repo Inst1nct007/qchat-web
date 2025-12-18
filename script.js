@@ -1,24 +1,29 @@
 const cursorDot = document.querySelector('.cursor-dot');
 const cursorOutline = document.querySelector('.cursor-outline');
 
-// Particle Trail System
+// Quantum State
+let isHovering = false;
+
 document.addEventListener('mousemove', (e) => {
     const posX = e.clientX;
     const posY = e.clientY;
 
-    // 1. Move the singularity (core)
-    cursorDot.style.left = `${posX}px`;
-    cursorDot.style.top = `${posY}px`;
+    // 1. Singularity Jitter (Heisenberg Uncertainty Principle)
+    // The core cursor vibrates slightly when moving
+    const jitter = isHovering ? 0 : (Math.random() - 0.5) * 2; 
 
-    // 2. Move the probability field (follows loosely)
+    cursorDot.style.left = `${posX + jitter}px`;
+    cursorDot.style.top = `${posY + jitter}px`;
+
+    // 2. Probability Field (smooth follow)
     cursorOutline.animate({
         left: `${posX}px`,
         top: `${posY}px`
-    }, { duration: 400, fill: "forwards" });
+    }, { duration: 200, fill: "forwards" }); // Faster response for sharper feel
 
-    // 3. Spawn Quantum Particles (Trail)
-    // Only spawn if mouse velocity is high enough (optional optimization, but let's just do it on move for smoothness)
-    if (Math.random() > 0.5) { // 50% chance to spawn per move event to avoid clutter
+    // 3. Spawn Data Shards (Trail)
+    // Create sharp trails
+    if (Math.random() > 0.3) { 
         createParticle(posX, posY);
     }
 });
@@ -28,24 +33,36 @@ function createParticle(x, y) {
     particle.classList.add('quantum-particle');
     document.body.appendChild(particle);
 
-    // Randomize position slightly for "uncertainty"
-    const randomX = (Math.random() - 0.5) * 10;
-    const randomY = (Math.random() - 0.5) * 10;
+    // Particles scatter sharply
+    const randomX = (Math.random() - 0.5) * 20;
+    const randomY = (Math.random() - 0.5) * 20;
     
-    particle.style.left = `${x + randomX}px`;
-    particle.style.top = `${y + randomY}px`;
+    particle.style.left = `${x}px`;
+    particle.style.top = `${y}px`;
 
-    // Animation: Fade out and expand
+    // Animation: Quick, sharp expansion and fade
     const animation = particle.animate([
-        { transform: 'translate(-50%, -50%) scale(0.5)', opacity: 0.8 },
-        { transform: 'translate(-50%, -50%) scale(0)', opacity: 0 }
+        { transform: 'translate(-50%, -50%) scale(1) rotate(0deg)', opacity: 0.6 },
+        { transform: `translate(${randomX}px, ${randomY}px) scale(0) rotate(90deg)`, opacity: 0 }
     ], {
-        duration: 800,
-        easing: 'cubic-bezier(0, .9, .57, 1)'
+        duration: 400,
+        easing: 'steps(5)' // Digital/Glitchy feel
     });
 
     animation.onfinish = () => particle.remove();
 }
+
+// Hover effects
+document.querySelectorAll('a, button, .feature-card').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        document.body.classList.add('hovering');
+        isHovering = true;
+    });
+    item.addEventListener('mouseleave', () => {
+        document.body.classList.remove('hovering');
+        isHovering = false;
+    });
+});
 
 // Hover effects
 document.querySelectorAll('a, button, .feature-card').forEach(item => {
