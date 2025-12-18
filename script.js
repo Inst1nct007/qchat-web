@@ -16,17 +16,13 @@ window.addEventListener('mousemove', (e) => {
     }, { duration: 500, fill: "forwards" });
 });
 
-// Hover effects
+// Hover effects via class toggling
 document.querySelectorAll('a, button, .feature-card').forEach(item => {
     item.addEventListener('mouseenter', () => {
-        cursorOutline.style.transform = 'translate(-50%, -50%) scale(1.5)';
-        cursorOutline.style.borderColor = '#fff';
-        cursorOutline.style.background = 'rgba(255, 255, 255, 0.1)';
+        document.body.classList.add('hovering');
     });
     
     item.addEventListener('mouseleave', () => {
-        cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';
-        cursorOutline.style.borderColor = 'rgba(255, 255, 255, 0.5)';
-        cursorOutline.style.background = 'transparent';
+        document.body.classList.remove('hovering');
     });
 });

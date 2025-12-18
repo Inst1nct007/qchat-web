@@ -270,17 +270,18 @@ footer {
 
 /* Custom Cursor */
 body {
-  cursor: none; /* Hide default cursor */
+  cursor: none;
 }
 
 a, button, .btn, .feature-card {
-  cursor: none; /* Ensure pointer doesn't show on interactive elements */
+  cursor: none;
 }
 
+/* The Singularity (Core) */
 .cursor-dot {
-  width: 5px;
-  height: 5px;
-  background-color: white;
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
   position: fixed;
   top: 0;
   left: 0;
@@ -288,13 +289,15 @@ a, button, .btn, .feature-card {
   border-radius: 50%;
   z-index: 9999;
   pointer-events: none;
-  box-shadow: 0 0 10px white;
+  box-shadow: 0 0 20px 2px rgba(255, 255, 255, 0.9), 0 0 40px 4px rgba(255, 255, 255, 0.5);
+  mix-blend-mode: difference;
 }
 
+/* The Probability Field (Outer Rings) */
 .cursor-outline {
-  width: 30px;
-  height: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   position: fixed;
   top: 0;
   left: 0;
@@ -302,5 +305,53 @@ a, button, .btn, .feature-card {
   border-radius: 50%;
   z-index: 9998;
   pointer-events: none;
-  transition: transform 0.2s, background 0.2s, border-color 0.2s;
+  background: rgba(255, 255, 255, 0.02);
+  transition: width 0.3s, height 0.3s, background 0.3s;
+}
+
+/* Orbital 1 */
+.cursor-outline::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: orbit 2s linear infinite;
+}
+
+/* Orbital 2 */
+.cursor-outline::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  border-bottom-color: #fff;
+  animation: orbit 3s linear infinite reverse;
+}
+
+@keyframes orbit {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Active State (Hover) */
+body.hovering .cursor-outline {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.8);
+}
+
+body.hovering .cursor-dot {
+  transform: translate(-50%, -50%) scale(1.5);
+  background-color: #000;
+  border: 2px solid #fff;
 }
