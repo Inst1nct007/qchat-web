@@ -169,8 +169,9 @@ h1 {
   gap: 2rem;
   max-width: 1100px;
   width: 100%;
-  margin-top: 2rem;
-  animation: fadeInUp 0.8s ease-out 0.8s backwards;
+  margin-top: 4rem; /* separation from hero */
+  padding: 0 2rem; /* Ensure padding on mobile */
+  margin-bottom: 4rem;
 }
 
 .feature-card {
