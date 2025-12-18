@@ -279,8 +279,8 @@ a, button, .btn, .feature-card {
 
 /* The Singularity (Core) */
 .cursor-dot {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   background-color: #fff;
   position: fixed;
   top: 0;
@@ -289,15 +289,15 @@ a, button, .btn, .feature-card {
   border-radius: 50%;
   z-index: 9999;
   pointer-events: none;
-  box-shadow: 0 0 20px 2px rgba(255, 255, 255, 0.9), 0 0 40px 4px rgba(255, 255, 255, 0.5);
-  mix-blend-mode: difference;
+  box-shadow: 0 0 15px 2px rgba(255, 255, 255, 1);
+  mix-blend-mode: exclusion;
 }
 
-/* The Probability Field (Outer Rings) */
+/* The Probability Field (Outer Halo) */
 .cursor-outline {
   width: 40px;
   height: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   position: fixed;
   top: 0;
   left: 0;
@@ -305,8 +305,43 @@ a, button, .btn, .feature-card {
   border-radius: 50%;
   z-index: 9998;
   pointer-events: none;
-  background: rgba(255, 255, 255, 0.02);
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
   transition: width 0.3s, height 0.3s, background 0.3s;
+  backdrop-filter: blur(2px);
+}
+
+/* Trail Particles */
+.quantum-particle {
+  position: fixed;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9997;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
+}
+
+/* Remove the atomic orbitals since user didn't like them */
+.cursor-outline::before,
+.cursor-outline::after {
+  display: none;
+}
+
+/* Active State (Hover) */
+body.hovering .cursor-outline {
+  width: 60px;
+  height: 60px;
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+body.hovering .cursor-dot {
+  transform: translate(-50%, -50%) scale(2);
+  background: #000;
+  border: 2px solid #fff;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
 }
 
 /* Orbital 1 */
