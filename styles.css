@@ -86,23 +86,23 @@ body {
 }
 
 h1 {
-  font-size: 6rem;
-  line-height: 1;
+  font-size: 4.5rem; /* Reduced from 6rem */
+  line-height: 1.1;
   margin: 0;
   background: linear-gradient(180deg, #ffffff 0%, #737373 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   filter: drop-shadow(0 0 50px rgba(255, 255, 255, 0.15));
   font-weight: 900;
-  letter-spacing: -4px;
+  letter-spacing: -3px;
 }
 
 .subtitle {
-  font-size: 1.4rem;
+  font-size: 1.1rem; /* Reduced from 1.4rem */
   color: var(--text-muted);
-  max-width: 600px;
-  margin: 0 auto 4rem;
-  line-height: 1.6;
+  max-width: 700px; /* Increased width for better flow */
+  margin: 1rem auto 3rem; /* Reduced top/bottom margins */
+  line-height: 1.5;
   font-weight: 400;
   animation: fadeInUp 0.8s ease-out 0.4s backwards;
 }
