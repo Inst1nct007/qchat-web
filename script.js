@@ -52,20 +52,5 @@ function createParticle(x, y) {
     animation.onfinish = () => particle.remove();
 }
 
-// Hover effects
-document.querySelectorAll('a, button, .feature-card').forEach(item => {
-    item.addEventListener('mouseenter', () => {
-        document.body.classList.add('hovering');
-        isHovering = true;
-    });
-    item.addEventListener('mouseleave', () => {
-        document.body.classList.remove('hovering');
-        isHovering = false;
-    });
-});
-
-// Hover effects
-document.querySelectorAll('a, button, .feature-card').forEach(item => {
-    item.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
-    item.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
-});
+// Hover effects REMOVED as requested
+// The cursor will remain consistent regardless of what it hovers over.
