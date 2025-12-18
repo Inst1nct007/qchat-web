@@ -263,8 +263,8 @@ footer {
   .hero::before { background-size: 40px 40px; }
   
   /* Hide custom cursor on mobile */
-  .cursor-dot, .cursor-outline {
-    display: none;
+  .cursor-dot, .cursor-outline, .quantum-particle {
+    display: none !important;
   }
 }
 
@@ -322,12 +322,6 @@ a, button, .btn, .feature-card {
   box-shadow: 0 0 5px rgba(255, 255, 255, 0.4);
 }
 
-/* Remove the atomic orbitals since user didn't like them */
-.cursor-outline::before,
-.cursor-outline::after {
-  display: none;
-}
-
 /* Active State (Hover) */
 body.hovering .cursor-outline {
   width: 60px;
@@ -342,51 +336,4 @@ body.hovering .cursor-dot {
   background: #000;
   border: 2px solid #fff;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-}
-
-/* Orbital 1 */
-.cursor-outline::before {
-  content: '';
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 50%;
-  border-top-color: #fff;
-  animation: orbit 2s linear infinite;
-}
-
-/* Orbital 2 */
-.cursor-outline::after {
-  content: '';
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  right: 5px;
-  bottom: 5px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 50%;
-  border-bottom-color: #fff;
-  animation: orbit 3s linear infinite reverse;
-}
-
-@keyframes orbit {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Active State (Hover) */
-body.hovering .cursor-outline {
-  width: 60px;
-  height: 60px;
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.8);
-}
-
-body.hovering .cursor-dot {
-  transform: translate(-50%, -50%) scale(1.5);
-  background-color: #000;
-  border: 2px solid #fff;
 }
