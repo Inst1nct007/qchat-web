@@ -5,30 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Qchat - Secure Quantum Chat</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
 
-  <div class="container">
+  <div class="hero">
     <div class="badge">v1.0.1 • PUBLIC BETA</div>
-    <div class="logo">Qchat</div>
-    <div class="tagline">Security that outlives technology.<br>End-to-End Post-Quantum Encryption.</div>
-
-    <a href="https://github.com/Inst1nct007/qchat-web/releases/latest/download/app-release.apk" class="btn primary">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 12px;"><path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
-      Download for Android (.apk)
-    </a>
-
-    <a href="https://github.com/Inst1nct007/qchat-web/releases/latest/download/qchat-windows.zip" class="btn">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 12px;"><path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
-      Download for Windows (.zip)
-    </a>
     
-    <div class="footer">
-      <p>Secure • Private • Quantum-Safe</p>
-      <p style="opacity: 0.5">© 2025 Qchat Open Source</p>
+    <div class="title-container">
+      <h1>Qchat</h1>
+    </div>
+    
+    <p class="subtitle">
+      The world's first simplified <strong>Post-Quantum Encrypted</strong> messaging app.<br>
+      Protect your conversations from the threats of tomorrow.
+    </p>
+
+    <div class="buttons">
+      <a href="https://github.com/Inst1nct007/qchat-web/releases/latest/download/app-release.apk" class="btn btn-primary">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 12px;"><path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+        Download for Android
+      </a>
+
+      <a href="https://github.com/Inst1nct007/qchat-web/releases/latest/download/qchat-windows.zip" class="btn btn-secondary">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 12px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><rect x="2" y="6" width="20" height="12"></rect><line x1="12" y1="22" x2="12" y2="18"></line><line x1="8" y1="22" x2="16" y2="22"></line></svg>
+        Download for Windows
+      </a>
+    </div>
+
+    <!-- Feature Grid -->
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon">🛡️</div>
+        <div class="feature-title">Quantum Safe</div>
+        <div class="feature-desc">Powered by Kyber (ML-KEM), ensuring your messages remain secure even against future quantum computers.</div>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <div class="feature-title">Realtime Sync</div>
+        <div class="feature-desc">Instant message delivery through Supabase Realtime with persistent read receipts and typing indicators.</div>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">🌙</div>
+        <div class="feature-title">Premium Design</div>
+        <div class="feature-desc">A carefully crafted dark mode experience with fluid animations and modern typography.</div>
+      </div>
     </div>
   </div>
+
+  <footer>
+    <p>Secure • Private • Open Source</p>
+    <p style="opacity: 0.5">© 2025 Qchat Project</p>
+  </footer>
 
 </body>
 </html>
