@@ -22,8 +22,8 @@ document.addEventListener('mousemove', (e) => {
     }, { duration: 200, fill: "forwards" }); // Faster response for sharper feel
 
     // 3. Spawn Data Shards (Trail)
-    // Create sharp trails
-    if (Math.random() > 0.3) { 
+    // Create sharp trails - increased density
+    if (Math.random() > 0.1) { // 90% chance to spawn (High density)
         createParticle(posX, posY);
     }
 });
